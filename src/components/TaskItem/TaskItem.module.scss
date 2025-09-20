@@ -1,0 +1,180 @@
+.taskItem {
+	padding: 1.5rem;
+	border-bottom: 1px solid var(--border-color);
+	transition: background-color 0.2s ease;
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	&:hover {
+		background: var(--bg-color);
+	}
+
+	&.completed {
+		opacity: 0.7;
+
+		.taskTitle {
+			text-decoration: line-through;
+			color: var(--text-color);
+			opacity: 0.6;
+		}
+	}
+}
+
+.taskContent {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.taskHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.875rem;
+}
+
+.priorityBadge {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-weight: 500;
+	text-transform: capitalize;
+}
+
+.priorityDot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+
+	&.high {
+		background: #ef4444;
+	}
+
+	&.medium {
+		background: #f59e0b;
+	}
+
+	&.low {
+		background: #10b981;
+	}
+}
+
+.date {
+	color: var(--text-color);
+	opacity: 0.6;
+	font-size: 0.8rem;
+}
+
+.taskMain {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+}
+
+.checkboxContainer {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.checkmark {
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--border-color);
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease;
+	background: var(--input-bg);
+
+	&:hover {
+		border-color: var(--primary-color);
+	}
+}
+
+.checkbox:checked + .checkmark {
+	background: var(--primary-color);
+	border-color: var(--primary-color);
+
+	&::after {
+		content: '✓';
+		color: white;
+		font-size: 12px;
+		font-weight: bold;
+	}
+}
+
+.taskInfo {
+	flex: 1;
+	min-width: 0;
+}
+
+.taskTitle {
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin: 0 0 0.5rem 0;
+	color: var(--text-color);
+	word-wrap: break-word;
+}
+
+.taskDescription {
+	margin: 0;
+	color: var(--text-color);
+	opacity: 0.8;
+	font-size: 0.95rem;
+	line-height: 1.4;
+	word-wrap: break-word;
+}
+
+.taskActions {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.deleteButton {
+	background: none;
+	border: none;
+	padding: 0.5rem;
+	cursor: pointer;
+	opacity: 0.6;
+	transition: opacity 0.2s ease;
+	font-size: 1.1rem;
+	border-radius: 4px;
+
+	&:hover {
+		opacity: 1;
+		background: var(--border-color);
+	}
+}
+
+@media (max-width: 768px) {
+	.taskItem {
+		padding: 1rem;
+	}
+
+	.taskHeader {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+
+	.taskMain {
+		gap: 0.75rem;
+	}
+
+	.taskTitle {
+		font-size: 1rem;
+	}
+
+	.taskDescription {
+		font-size: 0.9rem;
+	}
+}

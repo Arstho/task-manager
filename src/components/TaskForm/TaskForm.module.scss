@@ -1,0 +1,76 @@
+.form {
+	background: var(--card-bg);
+	padding: 1.5rem;
+	border-radius: 12px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	margin-bottom: 2rem;
+}
+
+.inputGroup {
+	margin-bottom: 1rem;
+}
+
+.input {
+	width: 100%;
+	padding: 0.75rem;
+	border: 2px solid var(--border-color);
+	border-radius: 8px;
+	font-size: 1rem;
+	background: var(--input-bg);
+	color: var(--text-color);
+
+	&:focus {
+		outline: none;
+		border-color: var(--primary-color);
+	}
+}
+
+.textarea {
+	@extend .input;
+	min-height: 80px;
+	resize: vertical;
+}
+
+.priorityGroup {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+
+	label {
+		font-weight: 500;
+		color: var(--text-color);
+	}
+}
+
+.select {
+	padding: 0.5rem;
+	border: 2px solid var(--border-color);
+	border-radius: 6px;
+	background: var(--input-bg);
+	color: var(--text-color);
+}
+
+.button {
+	width: 100%;
+	padding: 0.75rem;
+	background: var(--primary-color);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.2s;
+
+	&:hover {
+		background: var(--primary-hover);
+	}
+}
+
+.error {
+	color: var(--error-color);
+	font-size: 0.875rem;
+	margin-top: 0.25rem;
+	display: block;
+}
